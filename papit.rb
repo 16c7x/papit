@@ -3,18 +3,29 @@
 #require 'json'
 require 'pry' # For debugging
 
-puts "################"
-puts "Puppet API Tool"
-puts "################"
+def welcome()
+  puts "################"
+  puts "Puppet API Tool"
+  puts "################"
+end
 
-puts "Enter the API token: "
-puts '(you may need to run "puppet acces login" to generate this)'
-token = gets
+def menu()
+  puts "Enter the API token: "
+  puts '(you may need to run "puppet acces login" to generate this)'
+  token = gets
 
-puts "Enter the hostname: "
-puts "(e.g. localhost)"
-hostname = gets.gsub("\n",'')
-hostname = hostname.empty? ? "localhost" : hostname
+  puts "Enter the hostname: "
+  puts "(e.g. localhost)"
+  hostname = gets.gsub("\n",'')
+  hostname = hostname.empty? ? "localhost" : hostname
+
+  return token, hostname
+end
+
+
+welcome()
+token, hostname = menu()
+puts token
 puts hostname
 
-binding.pry
+#binding.pry
