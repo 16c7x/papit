@@ -22,10 +22,31 @@ def menu()
   return token, hostname
 end
 
+def action()
+  puts "what do you want to do?"
+  puts "[1] get something"
+  puts "[2] put something"
+  puts "[q] exit"
+  puts "select: "
+
+  action = gets
+
+  case action.strip
+  when "1"
+    puts "get?"
+  when "2"
+    puts "get?"
+  else
+    puts "exiting"
+  end
+end
 
 welcome()
 token, hostname = menu()
 puts token
 puts hostname
+
+action = action()
+puts action
 
 #binding.pry
